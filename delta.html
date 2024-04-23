@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random String Generator</title>
+</head>
+<body>
+    <h1>Random String Generator</h1>
+    <form>
+        <label for="wordInput">Enter any word:</label>
+        <input type="text" id="wordInput" name="wordInput">
+        <button type="button" onclick="generateRandomString()">Generate</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        function generateRandomString() {
+            const prefix = "KEY_";
+            const characters = "abcdefghijklmnopqrstuvwxyz0123456789";
+            let randomString = prefix;
+            for (let i = 0; i < 20; i++) {
+                const randomChar = characters[Math.floor(Math.random() * characters.length)];
+                randomString += randomChar;
+            }
+            document.getElementById("result").textContent = randomString;
+        }
+    </script>
+</body>
+</html>
